@@ -3,6 +3,28 @@ import re
 from bs4 import BeautifulSoup
 from urllib.request import urlopen, URLError
 
+"""SentDex Extract S&P 500 from Wikipedia
+def save_sp500_tickers(site, store_now=False):
+    if 'sp500tickers.joblib.save' not in glob('*save'):
+        resp  = requests.get(site)
+        soup  = bs.BeautifulSoup(resp.text, 'lxml')
+        table = soup.find('table', {'class':'wikitable sortable'})
+        
+        tickers = []
+        for row in table.findAll('tr')[1:]:
+            ticker = row.findAll('td')[0].text
+            tickers.append(ticker)
+        
+        if store_now:
+            joblib.dump(tickers, 'sp500tickers.joblib.save')
+    else:
+        tickers = joblib.load('sp500tickers.joblib.save')
+    
+    return tickers
+
+site    = 'https://en.wikipedia.org/wiki/List_of_S%26P_500_companies'
+tickers = save_sp500_tickers(site, store_now=True)
+"""
 sp500 = pd.read_csv("S&P500.csv", header = 0)
 tickers = sp500.Symbol
 
