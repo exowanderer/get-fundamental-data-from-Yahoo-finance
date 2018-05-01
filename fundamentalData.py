@@ -112,7 +112,7 @@ for ticker in tickers:
     allTd = soup.find_all('td',attrs={'class':'yfnc_tablehead1'})
     #
     for keyStatistic in keyStatistics:
-        result.ix[ticker, keyStatistic] = getValue(allTd, keyStatistic)    
+        result.loc[ticker, keyStatistic] = getValue(allTd, keyStatistic)    
 	
 #print result 
 result.to_csv("fundamentalData.csv", header=True, index=True, index_label="ticker")
