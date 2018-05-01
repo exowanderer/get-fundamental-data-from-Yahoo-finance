@@ -1,7 +1,7 @@
 import pandas as pd
 import re
 from bs4 import BeautifulSoup
-from urllib2 import urlopen, URLError
+from urllib.request import urlopen, URLError
 
 sp500 = pd.read_csv("S&P500.csv", header = 0)
 tickers = sp500.Symbol
